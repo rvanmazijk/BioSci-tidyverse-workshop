@@ -1,0 +1,25 @@
+---
+title: "Data wrangling & 'tidy' work in R"
+subtitle: |
+  | Postgraduate Workshop
+  | Dept. Biological Sciences, UCT
+  | ![](images/BIO.png){ width=25px } ![](images/UCT.png){ width=25px }
+author: "Ruan van Mazijk"
+date: "`r Sys.Date()`"
+fig_caption: yes
+mainfont: Avenir
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+```
+
+# Outline
+
+<!-- TODO: toc: true -->
+
+# Long vs wide data
+
+```{r}
+knitr::kable(iris)
+```
