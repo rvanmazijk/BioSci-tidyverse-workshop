@@ -1,8 +1,8 @@
 ---
-title: "Data wrangling & 'tidy' work in R"
+title: "Data wrangling & manipulation in R"
 subtitle: |
   | Postgraduate Workshop
-  | Dept. Biological Sciences, UCT
+  | Department of Biological Sciences, UCT
   | ![](images/BIO.png){ width=25px } ![](images/UCT.png){ width=25px }
 author: "Ruan van Mazijk"
 date: "`r Sys.Date()`"
@@ -12,6 +12,7 @@ mainfont: Avenir
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+library(tidyverse)
 ```
 
 # Outline
@@ -21,5 +22,6 @@ knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
 # Long vs wide data
 
 ```{r}
-knitr::kable(iris)
+knitr::kable(head((iris)))
 ```
+
