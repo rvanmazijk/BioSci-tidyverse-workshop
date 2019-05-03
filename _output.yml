@@ -1,5 +1,0 @@
-beamer_presentation:
-  latex_engine: xelatex
-html_document:
-  toc: yes
-  toc_depth: 2
