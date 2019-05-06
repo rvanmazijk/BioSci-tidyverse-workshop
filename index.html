@@ -10,7 +10,7 @@
 
 
 
-  <meta name="date" content="2019-05-03" />
+  <meta name="date" content="2019-05-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
       // Author information
       presenters: [
             {
-        name:  'Ruan van Mazijk' ,
+        name:  'Ruan van Mazijk, MSc candidate' ,
         company: '',
         gplus: '',
         twitter: '',
@@ -3129,7 +3129,7 @@ if (document.readyState !== "loading" &&
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">2019-05-03</p>
+            <p style="margin-top: 6px; margin-left: -2px;">2019-05-06</p>
           </hgroup>
   </slide>
 
@@ -3179,15 +3179,34 @@ The &ldquo;best&rdquo; way. Will make your life easiest in the long-term.
 
 </article></slide><slide class=""><hgroup><h2>Workshop outline</h2></hgroup><article  id="workshop-outline">
 
-<!-- TODO -->
+<ul class = 'build'>
+<li>Embracing the rectangle</li>
+<li><strong>Making</strong> your data rectangular</li>
+<li>Things to see &amp; do in rectangle land</li>
+<li><code>mutate()</code> &amp; friends—How to extend your raw dataset</li>
+<li><del>Complicated</del> Exotic problems</li>
+</ul>
 
-</article></slide><slide class=""><hgroup><h2>Long vs wide data</h2></hgroup><article  id="long-vs-wide-data">
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Embracing the rectangle</h2></hgroup><article  id="embracing-the-rectangle">
 
-<p><img src="data:image/png;base64,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" width="800px" /></p>
+<!-- TOC:
+- Long vs wide data
+- The advantages of rectangular data
+-->
 
-<p>Using the <code>iris</code> dataset built into R, let’s use some <em>Iris</em> trait data as examples of different ways to lay out your data.</p>
+</article></slide><slide class=""><hgroup><h2>Long vs wide data</h2></hgroup><article  id="long-vs-wide-data" class="build">
 
-</article></slide><slide class=""><hgroup><h2>Wide-form data</h2></hgroup><article  id="wide-form-data">
+<p>Remember this?</p>
+
+<p><img src="data:image/png;base64,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" width="600px" /></p>
+
+<p>Let’s move away from that…</p>
+
+<p>Using the <code>iris</code> dataset built into R \(\rightarrow\) <br> <em>Iris</em> trait data</p>
+
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<h3>Wide-form data</h3>
 
 <pre >## $setosa
 ##   Sepal.Length Sepal.Width Petal.Length Petal.Width
@@ -3207,7 +3226,9 @@ The &ldquo;best&rdquo; way. Will make your life easiest in the long-term.
 ## 2          5.8         2.7          5.1         1.9
 ## 3          7.1         3.0          5.9         2.1</pre>
 
-</article></slide><slide class=""><hgroup><h2>Classic long-form data</h2></hgroup><article  id="classic-long-form-data">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<h3>Classic long-form data</h3>
 
 <pre >##       Species Sepal.Length Sepal.Width Petal.Length Petal.Width
 ## 1      setosa          5.1         3.5          1.4         0.2
@@ -3228,7 +3249,9 @@ The &ldquo;best&rdquo; way. Will make your life easiest in the long-term.
 
 <pre >## ...</pre>
 
-</article></slide><slide class=""><hgroup><h2>We can get longer…</h2></hgroup><article  id="we-can-get-longer">
+</article></slide><slide class=""><hgroup><h2></h2></hgroup><article >
+
+<h3>We can get longer…</h3>
 
 <pre >##       Species        trait trait_value
 ## 1      setosa Sepal.Length         5.1
@@ -3249,11 +3272,28 @@ The &ldquo;best&rdquo; way. Will make your life easiest in the long-term.
 
 <pre >## ...</pre>
 
-</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>…</h2></hgroup><article  id="section">
+</article></slide><slide class=""><hgroup><h2>The advantages of long data</h2></hgroup><article  id="the-advantages-of-long-data">
 
-<pre class = 'prettyprint lang-r'>ggplot(data, aes(x, y)) +
-  geom_point() +
-  geom_line(lty = 123)</pre></article></slide>
+<ul class = 'build'>
+<li>Machine-readable</li>
+<li>The standard for most software/R-functions <br> (e.g. <code>lm()</code>, <code>plot()</code>, <code>ggplot()</code>)</li>
+<li>How most statistical methods treat data mathematically</li>
+<li>Easier to subset &amp; wrangle further!</li>
+</ul>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2><strong>Making</strong> your data rectangular</h2></hgroup><article  id="making-your-data-rectangular">
+
+</article></slide><slide class=""><hgroup><h2>What are your options?</h2></hgroup><article  id="what-are-your-options">
+
+<p>Easiest to lay it out like that from the start…</p>
+
+<p>Tools to follow assume your data is nice &amp; <em>tidy</em></p>
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2>Things to see &amp; do in rectangle land</h2></hgroup><article  id="things-to-see-do-in-rectangle-land">
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2><code>mutate()</code> &amp; friends—<br> How to extend your raw dataset</h2></hgroup><article  id="mutate-friends-how-to-extend-your-raw-dataset">
+
+</article></slide><slide class="segue dark nobackground level1"><hgroup class = 'auto-fadein'><h2><del>Complicated</del> <br> Exotic problems</h2></hgroup><article  id="complicated-exotic-problems"></article></slide>
 
 
   <slide class="backdrop"></slide>
