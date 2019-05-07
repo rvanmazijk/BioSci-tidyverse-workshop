@@ -1,44 +1,47 @@
 ---
+# TODO: insert powerpoint coverslide manually
 title: "Data wrangling & manipulation in R"
 subtitle: "Dept. Biological Sciences Postgraduate Workshop"
 author: "Ruan van Mazijk, MSc candidate"
 date: "`r Sys.Date()`"
-fig_caption: yes
-output:
-  ioslides_presentation:
-    logo: images/logos/BIO.png
+mainfont: Avenir
+monofont: Consolas
+#highlight: "tango"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
 library(tidyverse)
+library(emo)
 ```
 
-## Motivation
+# Motivation
 
-```{r motivating-example, echo=FALSE, out.height="500px", fig.cap="An example data-collection scenario in biology"}
+\pause
+
+```{r data-collection-scenario, echo=FALSE, out.width="7cm", fig.cap="An example data-collection scenario in biology"}
 knitr::include_graphics("images/motivating-example/data-collection-scenario_crop.png")
 ```
 
 ***
 
-```{r motivating-example-1, echo=FALSE, out.width="800px", fig.cap="_One_ way to lay out your collected data..."}
+```{r motivating-example-1, echo=FALSE, out.width="10cm", fig.cap="One way to lay out your collected data..."}
 knitr::include_graphics("images/motivating-example/motivating-example-1.png")
 ```
 
 ***
 
-```{r motivating-example-2, echo=FALSE, out.width="800px", fig.cap="Another way..."}
+```{r motivating-example-2, echo=FALSE, out.width="10cm", fig.cap="Another way..."}
 knitr::include_graphics("images/motivating-example/motivating-example-2.png")
 ```
 
 ***
 
-```{r motivating-example-3, echo=FALSE, out.width="800px", fig.cap="The \"best\" way. Will make your life easiest in the long-term."}
+```{r motivating-example-3, echo=FALSE, out.width="7cm", fig.cap="The \"best\" way. Will make your life easiest in the long-term."}
 knitr::include_graphics("images/motivating-example/motivating-example-3.png")
 ```
 
-## Workshop outline
+# Workshop outline
 
 >- Embracing the rectangle
 >- **Making** your data rectangular
@@ -48,72 +51,88 @@ knitr::include_graphics("images/motivating-example/motivating-example-3.png")
 
 # Embracing the rectangle
 
-<!-- TOC:
+<!--
+TOC:
 - Long vs wide data
 - The advantages of rectangular data
 -->
 
-## Long vs wide data {.build}
+\pause
+
+## Long vs wide data
 
 Remember this?
 
-```{r motivating-example-again, echo=FALSE, out.width="600px"}
+```{r motivating-example-again, echo=FALSE, out.width="10cm"}
 knitr::include_graphics("images/motivating-example/motivating-example-1.png")
 ```
 
-Let's move away from that...
+\pause
 
-Using the `iris` dataset built into R $\rightarrow$ <br>
-_Iris_ trait data
+This is _wide-form_ data. Let's move away from that...
+
+Using the `iris` dataset built into R!
 
 ***
 
-### Wide-form data
+## Wide-form data
+
+\pause
 
 ```{r wide-output, echo=FALSE}
 iris %>%
   split(.$Species) %>%
   map(select, -Species) %>%
-  map(slice, 1:3)
+  map(slice, 1:2)
 ```
 
 ***
 
-### Classic long-form data
+## Classic long-form data
+
+\pause
 
 ```{r long-output, echo=FALSE}
 iris %>%
   group_by(Species) %>%
-  slice(1:5) %>%
+  slice(1:3) %>%
   select(Species, Sepal.Length:Petal.Width) %>%
   as.data.frame()
-cat("...")
+```
+
+```{r, echo=FALSE, out.width="5cm", fig.cap="Another way..."}
+knitr::include_graphics("images/motivating-example/motivating-example-2.png")
 ```
 
 ***
 
-### We can get longer...
+## We can get longer...
+
+\pause
 
 ```{r very-long-output, echo=FALSE}
 iris %>%
   group_by(Species) %>%
-  slice(1:3) %>%
+  slice(1) %>%
   gather(trait, trait_value, -Species) %>%
   ungroup() %>%
   slice(1:15) %>%
   as.data.frame()
-cat("...")
 ```
+
+***
 
 ## The advantages of long data
 
 >- Machine-readable
->- The standard for most software/R-functions <br>
+>- The standard for most software/R-functions \
    (e.g. `lm()`, `plot()`, `ggplot()`)
 >- How most statistical methods treat data mathematically
 >- Easier to subset & wrangle further!
 
 # **Making** your data rectangular
+
+\pause
 
 ## What are your options?
 
@@ -123,6 +142,8 @@ Tools to follow assume your data is nice & _tidy_
 
 # Things to see & do in rectangle land
 
-# `mutate()` & friends---<br> How to extend your raw dataset
+# `mutate()` & friends
 
-# ~~Complicated~~ <br> Exotic problems
+How to extend your raw dataset
+
+# ~~Complicated~~ Exotic problems
