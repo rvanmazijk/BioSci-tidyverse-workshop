@@ -6,7 +6,6 @@ author: "Ruan van Mazijk, MSc candidate"
 date: "`r Sys.Date()`"
 mainfont: Avenir
 monofont: Consolas
-#highlight: "tango"
 ---
 
 ```{r setup, include=FALSE}
@@ -147,3 +146,24 @@ Tools to follow assume your data is nice & _tidy_
 How to extend your raw dataset
 
 # ~~Complicated~~ Exotic problems
+
+# `dplyr::`
+
+```{r, eval=FALSE}
+select()
+filter()
+group_by()
+summarise()
+arrange()
+join()
+mutate()
+```
+
+# `tidyr::`
+
+```{r eval=FALSE}
+gather()
+spread()
+separate()
+unite()
+```
