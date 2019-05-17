@@ -11,7 +11,6 @@ monofont: Consolas
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
 library(tidyverse)
-library(emo)
 ```
 
 # Motivation
@@ -99,10 +98,6 @@ iris %>%
   as.data.frame()
 ```
 
-```{r, echo=FALSE, out.width="5cm", fig.cap="Another way..."}
-knitr::include_graphics("images/motivating-example/motivating-example-2.png")
-```
-
 ***
 
 ## We can get longer...
@@ -135,23 +130,84 @@ iris %>%
 
 ## What are your options?
 
-Easiest to lay it out like that from the start...
+1. (Easiest to lay it out like that from the start...)
+    - (Many tools (to follow) assume your data is nice & _tidy_)
 
-Tools to follow assume your data is nice & _tidy_
+\pause
+
+2. _Careful_ Excel work
+    - Risky...
+3. Use R!
+    - Many tools _also_ help in _tidying_ data
+    - Namely, the package `tidyr`
+
+***
+ 
+## `tidyr::`
+
+An R-package all about getting to _this_\footnote{CC BY-NC-ND 3.0 Grolemund \& Wickham 2017. \textit{R for Data Science}}:
+
+\pause
+
+```{r, echo=FALSE, out.width="10cm"}
+knitr::include_graphics("images/tidy-1.png")
+```
+
+\pause
+
+> 1. Each **variable** must have its own **column**.
+> 2. Each **observation** must have its own **row**.
+> 3. Each **value** must have its own **cell**.
+
+***
+
+## `tidyr::` cont.
+
+### Verbs to tidy your data
+
+Untidy observations?
+
+```{r eval=FALSE}
+gather()    # if > 1 observation per row
+spread()    # if observations live in > 1 row
+```
+
+\pause
+
+Untidy variables?
+
+```{r, eval=FALSE}
+separate()  # if > 1 variable per column
+unite()     # if variables live in > 1 column 
+```
+
+***
+
+### Note the following when choosing `tidyr::` verbs
+
+- Be clear on what your **observations** are
+    - Like, what **unit** of your study counts as an observation
+    - E.g. \textcolor{green}{Leaf traits}: plant leaf vs plant individual
+    - E.g. \textcolor{red}{Reproductive success}: egg size vs clutch size
+    - **This will depend on your study &/or data!**
+- Variables are discrete, seperate ideas
 
 # Things to see & do in rectangle land
 
-# `mutate()` & friends
+## Using `dplyr::` to work with data
 
-How to extend your raw dataset
+1. Subsetting etc.
+2. Extending your dataset
 
-# ~~Complicated~~ Exotic problems
+***
 
-# `dplyr::`
+## `dplyr::`
+
+### Verbs to touch, slice-up, subset & look inside data
 
 ```{r, eval=FALSE}
-select()
-filter()
+select()  # !!!
+filter()  # !!!
 group_by()
 summarise()
 arrange()
@@ -159,11 +215,61 @@ join()
 mutate()
 ```
 
-# `tidyr::`
+***
 
-```{r eval=FALSE}
-gather()
-spread()
-separate()
-unite()
+### 1. Subsetting etc.
+
+```{r, eval=FALSE}
+select()  # !!!
+filter()  # !!!
 ```
+
+***
+
+```{r}
+iris
+```
+
+#### `select()` vs `$`
+
+```{r}
+iris <- as.data.frame(iris)  # like this by default
+iris
+```
+
+```{r}
+iris[, 1]
+iris[[1]]
+iris[, "Sepal.Length"]
+iris[["Sepal.Length"]]
+iris$Sepal.Length
+```
+
+```{r}
+iris["Sepal.Length"]
+select(iris, Sepal.Length)
+```
+
+***
+
+```{r}
+iris <- as_tibble(iris)
+iris
+```
+
+```{r}
+iris[[1]]
+iris[["Sepal.Length"]]
+iris$Sepal.Length
+```
+
+```{r}
+iris[, 1]
+iris[, "Sepal.Length"]
+iris["Sepal.Length"]
+select(iris, Sepal.Length)
+```
+
+### 2. Extending your dataset with `mutate()` & friends
+
+# ~~Complicated~~ Exotic problems
