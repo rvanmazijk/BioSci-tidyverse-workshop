@@ -1,5 +1,0 @@
-beamer_presentation:
-  highlight: haddock
-  latex_engine: xelatex
-  includes:
-    in_header: style.sty
