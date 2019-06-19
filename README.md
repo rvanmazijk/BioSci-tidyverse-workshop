@@ -1,8 +1,8 @@
 # Data wrangling & manipulation in R <img src="images/footer.png" height="38px" align="right" />
 
-A workshop by Ruan van Mazijk, for his colleagues at the Department of Biological Sciences, University of Cape Town (UCT), covering common data cleaning, wrangling and wrangling tasks in R, focussing on the [`tidyverse`](https://www.tidyverse.org/) package ecosystem.
+A workshop by [Ruan van Mazijk](https://rvanmazijk.github.io), for his colleagues at the Department of Biological Sciences, University of Cape Town (UCT), covering common data cleaning, wrangling and wrangling tasks in R, focussing on the [`tidyverse`](https://www.tidyverse.org/) package ecosystem.
 
-This workshop is supported by the [UCT Biological Sciences Postgraduate Committee](https://uctbioscipg.wixsite.com/uctbioscipg) and the [Institute for Communities and Wildlife in Africa (iCWild)](http://www.icwild.uct.ac.za/)
+This workshop is supported by the [UCT Biological Sciences Postgraduate Committee](https://uctbioscipg.wixsite.com/uctbioscipg) and the [Institute for Communities and Wildlife in Africa (iCWild)](http://www.icwild.uct.ac.za/).
 
 <p>
   <img src="images/face.jpg"         height="100px" />
