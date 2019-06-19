@@ -1,8 +1,9 @@
-![](images/header.png)
+<img src="images/header.png" height="100px" />
 
-A workshop by Ruan van Mazijk, for his colleagues at the Department of Biological Sciences, at the University of Cape Town, covering common data cleaning, wrangling and wrangling tasks in R, focussing on the `tidyverse` package ecosystem.
+A workshop by Ruan van Mazijk, for his colleagues at the Department of Biological Sciences, University of Cape Town, covering common data cleaning, wrangling and wrangling tasks in R, focussing on the `tidyverse` package ecosystem.
 
 <p>
+  <img src="images/face.jpg"         height="100px" />
   <img src="images/logos/UCT.png"    height="100px" />
   <img src="images/logos/BIO.png"    height="100px" />
   <img src="images/logos/iCWild.jpg" height="100px" />
@@ -12,4 +13,4 @@ A workshop by Ruan van Mazijk, for his colleagues at the Department of Biologica
 
 <img src="images/logos/hex-tidyverse.png" height="100px" />
 
-![](images/footer.png)
+<img src="images/footer.png" height="100px" />
