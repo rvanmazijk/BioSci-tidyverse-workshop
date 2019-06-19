@@ -1,4 +1,4 @@
-# Data wrangling & manipulation in R <img src="images/footer.png" height="25px" />
+# Data wrangling & manipulation in R <img src="images/footer.png" height="50px" align="right" />
 
 A workshop by Ruan van Mazijk, for his colleagues at the Department of Biological Sciences, University of Cape Town (UCT), covering common data cleaning, wrangling and wrangling tasks in R, focussing on the [`tidyverse`](https://www.tidyverse.org/) package ecosystem.
 
