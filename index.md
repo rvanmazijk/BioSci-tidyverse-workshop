@@ -13,11 +13,11 @@ A workshop by [Ruan van Mazijk](https://rvanmazijk.github.io) on common data cle
 
 **!! UNDER CONSTRUCTION !!**
 
-Day | Topic
-----|------------------------------------------------------------
-1   | Tidy data principles & `tidyr` ([slides](day-1-slides.pdf))
-2   | Manipulating data I: Intro to `dplyr`
-3   | Manipulating data II: `dplyr::mutate()` & friends
+| Day | Topic                                             |
+|:---:|:--------------------------------------------------|
+| 1   | Tidy data principles & `tidyr`                    |
+| 2   | Manipulating data I: Intro to `dplyr`             |
+| 3   | Manipulating data II: `dplyr::mutate()` & friends |
 
 ## Further reading
 
