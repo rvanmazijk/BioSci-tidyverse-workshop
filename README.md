@@ -2,6 +2,8 @@
 
 A workshop by [Ruan van Mazijk](https://rvanmazijk.github.io), for his colleagues at the Department of Biological Sciences, University of Cape Town (UCT), covering common data cleaning, wrangling and wrangling tasks in R, focussing on the [`tidyverse`](https://www.tidyverse.org/) package ecosystem.
 
+Please see to the workshop "website" [here](https://tinyurl.com/r-with-ruan).
+
 This workshop is supported by the [UCT Biological Sciences Postgraduate Committee](https://uctbioscipg.wixsite.com/uctbioscipg) and [iCWild](http://www.icwild.uct.ac.za/).
 
 <p>
