@@ -1,6 +1,6 @@
 ![](images/header.png)
 
-A workshop by [Ruan van Mazijk](https://rvanmazijk.github.io) on common data cleaning, wrangling and wrangling tasks in R, focussing on the [`tidyverse`](https://www.tidyverse.org/) package ecosystem, supported by the [UCT Biological Sciences Postgraduate Committee](https://uctbioscipg.wixsite.com/uctbioscipg) and [iCWild](http://www.icwild.uct.ac.za/).
+A workshop by [Ruan van Mazijk](https://rvanmazijk.github.io/about/) on common data cleaning, wrangling and wrangling tasks in R, focussing on the [`tidyverse`](https://www.tidyverse.org/) package ecosystem, supported by the [UCT Biological Sciences Postgraduate Committee](https://uctbioscipg.wixsite.com/uctbioscipg) and [iCWild](http://www.icwild.uct.ac.za/).
 
 <p>
   <img src="images/face.jpg"         height="100px" />
