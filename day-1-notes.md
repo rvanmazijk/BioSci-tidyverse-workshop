@@ -50,11 +50,58 @@ data1 <- f(data, arg1 = "something")
 data2 <- g(data1, another.thing = "blah")
 data3 <- h(data2, a.setting = TRUE)
 data4 <- data3[data3$a.column == "cough", ]
-``` 
+```
 
-Or, worse, hard to read code:
+Look at all those intermediate objects we don't care about :cold_sweat:
 
-<!-- TODO: cont. -->
+Or, worse, if we try to remove the intermediate objects, we get **hard to read** code:
+
+```r
+data <- read.csv("my-data.csv")
+
+data <-
+  h(
+    g(
+      f(
+        data,
+        arg1 = "something"
+      ),
+      another.thing = "blah"
+    ),
+    a.setting = TRUE
+  )
+
+data <- data[data$a.column == "cough", ]
+```
+
+And we still can't get rid of that subsetting line easily!
+
+The solution? A handy addition to normal R-syntax: the "pipe" `%>%` (also pronounced "then").
+
+With the pipe, we feed the result of one line of R-code into the next (i.e. we send the result of one expression to the next):
+
+```
+f(x)
+x %>% f() # same thing
+```
+This allows us to compose functions really easily!
+
+Instead of this mess:
+
+```r
+h(g(f(x)))
+```
+
+We can do this:
+
+```r
+x %>%
+  f() %>%
+  g() %>%
+  h()
+```
+
+Much easier to read! Instead of reading from the inside-out, we can read top-to-bottom :smiley:
 
 ## A motivating example
 
