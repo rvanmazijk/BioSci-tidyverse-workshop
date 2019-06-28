@@ -1,8 +1,12 @@
-# Day 1: Tidy data principles & `tidyr` 
+# My notes outlining the workshop
 
-## Motivation behind tidy rectangular data
+Ruan van Mazijk
 
-## Motivation behind `%>%`
+## Day 1: Tidy data principles & `tidyr` 
+
+### Motivation behind tidy rectangular data
+
+### Motivation behind `%>%`
 
 - Bad:
   - Multiple intermediate objects
@@ -12,16 +16,16 @@
   - Only keep the intermediates you want!
   - How `%>%` is nice with `tidyverse`'s "verb-like" functions (_always_ takes data as 1^st^ argument!)
 
-## The meat of today: `tidyr`
+### The meat of today: `tidyr`
 
-### `separate()` & `unite()`
+#### `separate()` & `unite()`
 
 - How it works
 - An example in the slides
 - An example for them to try
   - Something like: `label "A1" -> site "A", transect "1"`
 
-### `gather()` & `spread()`
+#### `gather()` & `spread()`
 
 `tidyr`              | `gather()` | `spread()`
 ---------------------|------------|-----------
@@ -36,7 +40,7 @@ Table: [!!!](https://tidyr.tidyverse.org/)
 - An example for them to try
   - Something like: `site_A, site_B, site_C -> site, plant_height`
 
-# Day 2: Manipulating data I: Intro to `dplyr`
+## Day 2: Manipulating data I: Intro to `dplyr`
 
 `select()`, `filter()`, `arrange()`, `join()`
 
@@ -49,7 +53,7 @@ Table: [!!!](https://tidyr.tidyverse.org/)
 
 ...
 
-# Day 3: Extending your data: `mutate()` & `summarise()`
+## Day 3: Extending your data: `mutate()` & `summarise()`
 
 `tidyverse`                        | `base`
 -----------------------------------|---------------------------

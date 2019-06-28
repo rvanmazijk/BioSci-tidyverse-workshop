@@ -1,4 +1,8 @@
-# Introducing Ruan
+# Day 1 notes
+
+Ruan van Mazijk
+
+## Introducing Ruan
 
 - BSc + Hons here at UCT
 
@@ -11,7 +15,7 @@
 
 - My MSc is on the relationships between genome-size and plant phenotypes and ecology in CFR _Schoenus_ and _Tetraria_ species (Cyperaceae, tribe Schoeneae)
 
-# Workshop goals
+## Workshop goals
 
 - More reproducible science
 - Save time by:
@@ -20,7 +24,7 @@
 - Boost your skills
 - Think about your data programmatically
 
-# Workshop outline
+## Workshop outline
 
 | Day | Topic                                             |
 |:---:|:--------------------------------------------------|
@@ -30,7 +34,7 @@
 
 But before that, we need to discuss something technical...
 
-# The 2 dialects of R
+## The 2 dialects of R
 
 1. `base`
   - `$`, `[]`, `[[]]`, `apply()`, `which()`, `subset()`
@@ -52,7 +56,7 @@ Or, worse, hard to read code:
 
 <!-- TODO: cont. -->
 
-# A motivating example
+## A motivating example
 
 ![An example data-collection scenario in biology]()
 
@@ -64,7 +68,7 @@ Or, worse, hard to read code:
 
 <!-- TODO: cont. -->
 
-# Embracing the rectangle
+## Embracing the rectangle
 
 <!--
 TOC:
@@ -72,7 +76,7 @@ TOC:
 - The advantages of rectangular data
 -->
 
-## Long vs wide data
+### Long vs wide data
 
 Remember this?
 
@@ -82,7 +86,7 @@ This is _wide-form_ data. Let's move away from that...
 
 Using the `iris` dataset built into R!
 
-## Wide-form data
+### Wide-form data
 
 ```r
 iris %>%
@@ -91,7 +95,7 @@ iris %>%
   map(slice, 1:2)
 ```
 
-## Classic long-form data
+### Classic long-form data
 
 ```r
 iris %>%
@@ -101,7 +105,7 @@ iris %>%
   as.data.frame()
 ```
 
-## We can get longer...
+### We can get longer...
 
 ```r
 iris %>%
@@ -113,16 +117,16 @@ iris %>%
   as.data.frame()
 ```
 
-## The advantages of long data
+### The advantages of long data
 
 - Machine-readable
 - The standard for most software/R-functions (e.g. `lm()`, `plot()`, `ggplot()`)
 - How most statistical methods treat data mathematically
 - Easier to subset & wrangle further!
 
-# **Making** your data rectangular
+## **Making** your data rectangular
 
-## What are your options?
+### What are your options?
 
 1. (Easiest to lay it out like that from the start...)
     - (Many tools (to follow) assume your data is nice & _tidy_)
@@ -132,7 +136,7 @@ iris %>%
     - Many tools _also_ help in _tidying_ data
     - Namely, the package `tidyr`
 
-## `tidyr::`
+### `tidyr::`
 
 An R-package all about getting to _this_^[CC BY-NC-ND 3.0 Grolemund & Wickham 2017. _R for Data Science_]:
 
@@ -142,7 +146,7 @@ An R-package all about getting to _this_^[CC BY-NC-ND 3.0 Grolemund & Wickham 20
 2. Each **observation** must have its own **row**.
 3. Each **value** must have its own **cell**.
 
-### Verbs to tidy your data
+#### Verbs to tidy your data
 
 Untidy observations?
 
@@ -158,7 +162,7 @@ separate()  # if > 1 variable per column
 unite()     # if variables live in > 1 column 
 ```
 
-### Note the following when choosing `tidyr::` verbs
+#### Note the following when choosing `tidyr::` verbs
 
 - Be clear on what your **observations** are
     - Like, what **unit** of your study counts as an observation
@@ -176,9 +180,9 @@ unite()     # if variables live in > 1 column
 
 ***
 
-## `dplyr::`
+### `dplyr::`
 
-### Verbs to touch, slice-up, subset & look inside data
+#### Verbs to touch, slice-up, subset & look inside data
 
 ```r
 select()  # !!!
@@ -190,7 +194,7 @@ join()
 mutate()
 ```
 
-### 1. Subsetting etc.
+#### 1. Subsetting etc.
 
 ```r
 select()  # !!!
@@ -201,7 +205,7 @@ filter()  # !!!
 iris
 ```
 
-#### `select()` vs `$`
+##### `select()` vs `$`
 
 ```r
 iris <- as.data.frame(iris)  # like this by default
@@ -239,7 +243,6 @@ iris["Sepal.Length"]
 select(iris, Sepal.Length)
 ```
 
-### 2. Extending your dataset with `mutate()` & friends
+#### 2. Extending your dataset with `mutate()` & friends
 
-# ~~Complicated~~ Exotic problems
-
+## ~~Complicated~~ Exotic problems
