@@ -26,11 +26,11 @@ Ruan van Mazijk
 
 ## Workshop outline
 
-| Day | Topic                                             |
-|:---:|:--------------------------------------------------|
-| 1   | Tidy data principles & `tidyr`                    |
-| 2   | Manipulating data I: Intro to `dplyr`             |
-| 3   | Manipulating data II: `dplyr::mutate()` & friends |
+| Day | Topic                                                        |
+|:---:|:-------------------------------------------------------------|
+| 1   | Tidy data principles & `tidyr`                               |
+| 2   | Manipulating your data & an intro to `dplyr`                 |
+| 3   | Extending your data with `mutate()`, `summarise()` & friends |
 
 But before that, we need to discuss something technical...
 
