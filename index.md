@@ -9,6 +9,14 @@ A workshop by [Ruan van Mazijk](https://rvanmazijk.github.io/about/) on common d
   <img src="images/logos/iCWild.jpg" height="100px" />
 </p>
 
+The material taught in this workshop is based on Ruan's own experience with the R-packages [`tidyr`](https://tidyr.tidyverse.org/) and [`dplyr`](https://dplyr.tidyverse.org/), and general tidy-data-science principles he learnt from from [R for Data Science](https://r4ds.had.co.nz/) (see [further reading](https://rvanmazijk.github.io/data-wrangling-workshop/#further-reading) below).
+
+<p>
+  <img src="images/logos/hex-tidyverse.png" height="100px" />
+  <img src="images/logos/hex-tidyr.png"     height="100px" />
+  <img src="images/logos/hex-dplyr.png"     height="100px" />
+</p>
+
 ## Details
 
 - **Venue:** Sci Lab C (RW James Bldg, UCT)
@@ -36,11 +44,11 @@ should come back as `TRUE`.
 
 **!! UNDER CONSTRUCTION !!**
 
-| Day | Topic                                             |
-|:---:|:--------------------------------------------------|
-| 1   | Tidy data principles & `tidyr`                    |
-| 2   | Manipulating data I: Intro to `dplyr`             |
-| 3   | Manipulating data II: `dplyr::mutate()` & friends |
+| Day | Topic                                                        |
+|:---:|:-------------------------------------------------------------|
+| 1   | Tidy data principles & `tidyr`                               |
+| 2   | Manipulating you data & an ntro to `dplyr`                   |
+| 3   | Extending your data with `mutate()`, `summarise()` & friends |
 
 ## Further reading
 
