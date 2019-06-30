@@ -42,13 +42,11 @@ should come back as `TRUE`.
 
 ## Workshop outline
 
-**!! UNDER CONSTRUCTION !!**
-
-| Day | Topic                                                        |
-|:---:|:-------------------------------------------------------------|
-| 1   | Tidy data principles & `tidyr`                               |
-| 2   | Manipulating you data & an ntro to `dplyr`                   |
-| 3   | Extending your data with `mutate()`, `summarise()` & friends |
+| Day | Topic                                                        |                                             |                                       |
+|:---:|:-------------------------------------------------------------|:--------------------------------------------|:--------------------------------------|
+| 1   | Tidy data principles & `tidyr`                               | [Slides](slides-and-notes/day-1-slides.pdf) | [Notes](slides-and-notes/day-1-notes) |
+| 2   | Manipulating you data & an ntro to `dplyr`                   |                                             |                                       |
+| 3   | Extending your data with `mutate()`, `summarise()` & friends |                                             |                                       |
 
 ## Further reading
 
