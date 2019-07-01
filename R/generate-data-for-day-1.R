@@ -1,35 +1,30 @@
-n_unicorn_visits <- function(nflowers) {
-  nflowers / 4
-}
+library(tidyverse)
+library(magrittr)
 
-unicorns <- data.frame(
-  site_1_species_a_nflowers = rpois(100, 10),
-  site_2_species_a_nflowers = rpois(100, 10),
-  site_3_species_a_nflowers = rpois(100, 10),
-  site_1_species_b_nflowers = rpois(100, 20),
-  site_2_species_b_nflowers = rpois(100, 20),
-  site_3_species_b_nflowers = rpois(100, 20),
-  site_1_species_c_nflowers = rpois(100, 30),
-  site_2_species_c_nflowers = rpois(100, 30),
-  site_3_species_c_nflowers = rpois(100, 30)
-)
-unicorns$site_1_species_a_nunicorns <-
-  n_unicorn_visits(unicorns$site_1_species_a_nflowers)
-unicorns$site_2_species_a_nunicorns <-
-  n_unicorn_visits(unicorns$site_2_species_a_nflowers)
-unicorns$site_3_species_a_nunicorns <-
-  n_unicorn_visits(unicorns$site_3_species_a_nflowers)
-unicorns$site_1_species_b_nunicorns <-
-  n_unicorn_visits(unicorns$site_1_species_b_nflowers)
-unicorns$site_2_species_b_nunicorns <-
-  n_unicorn_visits(unicorns$site_2_species_b_nflowers)
-unicorns$site_3_species_b_nunicorns <-
-  n_unicorn_visits(unicorns$site_3_species_b_nflowers)
-unicorns$site_1_species_c_nunicorns <-
-  n_unicorn_visits(unicorns$site_1_species_c_nflowers)
-unicorns$site_2_species_c_nunicorns <-
-  n_unicorn_visits(unicorns$site_2_species_c_nflowers)
-unicorns$site_3_species_c_nunicorns <-
-  n_unicorn_visits(unicorns$site_3_species_c_nflowers)
+set.seed(1234)
 
-readr::write_csv(unicorns, here::here("data/unicorns.csv"))
+unicorns <-
+  expand.grid(
+    site  = c("site1", "site2", "site3"),
+    species = rep(c("speciesa", "speciesb", "speciesc"), 10)
+  ) %>%
+  as_tibble() %>%
+  mutate(
+    nflowers = map_dbl(species, ~ rpois(1, case_when(
+      .x == "speciesa" ~ 10,
+      .x == "speciesb" ~ 20,
+      .x == "speciesc" ~ 30
+    ))),
+    nunicorns = nflowers * ceiling(jitter(2))
+  ) %>%
+  group_by(species) %>%
+  mutate(replicate = 1:n()) %>%
+  gather(variable, value, nflowers, nunicorns) %>%
+  unite(species_variable, species, variable) %>%
+  spread(species_variable, value) %>%
+  arrange(replicate)
+
+write_csv(unicorns, "data/unicorns.csv")
+
+write_csv(untidydata::language_diversity, "data/language.csv")
+write_csv(untidydata::pre_post, "data/prepost.csv")
