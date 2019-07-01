@@ -23,7 +23,7 @@ The material taught in this workshop is based on Ruan's own experience with the 
   - [Slides](slides-and-notes/day-1-slides.pdf)
   - [Notes](slides-and-notes/day-1-notes)
   - [R-script](R/day-1-demo.R)
-- Day 2: Manipulating you data & an ntro to `dplyr`
+- Day 2: Manipulating you data & an intro to `dplyr`
 - Day 3: Extending your data with `mutate()`, `summarise()` & friends
 
 ## Further reading
