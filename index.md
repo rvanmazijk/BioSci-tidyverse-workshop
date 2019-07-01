@@ -17,6 +17,21 @@ The material taught in this workshop is based on Ruan's own experience with the 
   <img src="images/logos/hex-dplyr.png"     height="100px" />
 </p>
 
+## Workshop outline
+
+- Day 1: Tidy data principles & `tidyr`
+  - [Slides](slides-and-notes/day-1-slides.pdf)
+  - [Notes](slides-and-notes/day-1-notes)
+  - [R-script](R/day-1-demo.R)
+- Day 2: Manipulating you data & an ntro to `dplyr`
+- Day 3: Extending your data with `mutate()`, `summarise()` & friends
+
+## Further reading
+
+R for Data Science, by Garrett Grolemund & Hadley Wickham (available [online](https://r4ds.had.co.nz/), open source!)
+
+[RStudio cheatsheets](https://www.rstudio.com/resources/cheatsheets/) (also available in RStudio directly via the menus `Help > Cheatsheets`)
+
 ## Details
 
 - **Venue:** Sci Lab C (RW James Bldg, UCT)
@@ -37,20 +52,7 @@ That should get you up and running on the latest version. Give it some time to r
 ```r
 "tidyverse" %in% installed.packages()
 ```
-
 should come back as `TRUE`.
-
-## Workshop outline
-
-| Day | Topic                                                        |                                             |                                       |
-|:---:|:-------------------------------------------------------------|:--------------------------------------------|:--------------------------------------|
-| 1   | Tidy data principles & `tidyr`                               | [Slides](slides-and-notes/day-1-slides.pdf) | [Notes](slides-and-notes/day-1-notes) |
-| 2   | Manipulating you data & an ntro to `dplyr`                   |                                             |                                       |
-| 3   | Extending your data with `mutate()`, `summarise()` & friends |                                             |                                       |
-
-## Further reading
-
-R for Data Science, by Garrett Grolemund & Hadley Wickham (available [online](https://r4ds.had.co.nz/), open source!)
 
 ## Disclaimer
 
