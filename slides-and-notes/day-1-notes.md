@@ -2,6 +2,8 @@
 
 Ruan van Mazijk
 
+**Note, this notes-page is still being written!**
+
 ## Introducing Ruan
 
 - BSc + Hons here at UCT
@@ -113,15 +115,15 @@ Much easier to read! Instead of reading from the inside-out, we can read top-to-
 
 ![The "best" way. (Will make your life easiest in the long-term.)]()
 
-<!-- TODO: cont. -->
+<!--
+TODO: cont.
 
 ## Embracing the rectangle
 
-<!--
 TOC:
+
 - Long vs wide data
 - The advantages of rectangular data
--->
 
 ### Long vs wide data
 
@@ -293,3 +295,4 @@ select(iris, Sepal.Length)
 #### 2. Extending your dataset with `mutate()` & friends
 
 ## ~~Complicated~~ Exotic problems
+-->
