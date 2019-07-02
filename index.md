@@ -24,13 +24,17 @@ The material taught in this workshop is based on Ruan's own experience with the 
   - [Notes](slides-and-notes/day-1-notes)
   - [R-script](R/day-1-demo.R)
 - Day 2: Manipulating you data & an intro to `dplyr`
+  - [Slides](slides-and-notes/day-2-slides.pdf)
+  - [Notes](slides-and-notes/day-2-notes)
 - Day 3: Extending your data with `mutate()`, `summarise()` & friends
 
 ## Further reading
 
 R for Data Science, by Garrett Grolemund & Hadley Wickham (available [online](https://r4ds.had.co.nz/), open source!)
 
-[RStudio cheatsheets](https://www.rstudio.com/resources/cheatsheets/) (also available in RStudio directly via the menus `Help > Cheatsheets`)
+[RStudio cheatsheets](https://www.rstudio.com/resources/cheatsheets/) (also available in RStudio directly via the menus `Help > Cheatsheets`) (many of these have been translated into languages other than English!)
+
+Also, check out the `tidyverse` team's "official" curated list of learning resources [here](https://www.tidyverse.org/learn/).
 
 ## Details
 

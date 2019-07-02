@@ -1,3 +1,9 @@
+# Day 2 note
+
+Ruan van Mazijk
+
+**Note, this notes-page is still being written!**
+
 ## Using `dplyr::` to work with data
 
 1. Subsetting etc.
