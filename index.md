@@ -34,6 +34,8 @@ The materials I have prepared for this workshop are all open source (CC-BY-4.0 R
   - Notes (**still being neatened up!**)
   - [R-script](R/day-3-demo.R)
 
+Data-sets used are available and described [here](data/).
+
 ## Further reading
 
 R for Data Science, by Garrett Grolemund & Hadley Wickham (available [online](https://r4ds.had.co.nz/), open source!)
