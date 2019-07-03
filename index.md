@@ -28,7 +28,9 @@ The materials I have prepared for this workshop are all open source (CC-BY-4.0 R
 - Day 2: Manipulating you data & an intro to `dplyr`
   - [Slides](slides-and-notes/day-2-slides.pdf)
   - [Notes](slides-and-notes/day-2-notes)
+  - [R-script](R/day-2-demo.R)
 - Day 3: Extending your data with `mutate()`, `summarise()` & friends
+  - [Slides](slides-and-notes/day-3-slides.pdf)
 
 ## Further reading
 
