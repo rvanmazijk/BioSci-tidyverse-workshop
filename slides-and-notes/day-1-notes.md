@@ -219,7 +219,6 @@ data %>%
 
 ![](../images/unite-example.png)
 
-
 ***
 
 Diagrams illustrating `gather()`, `spread()`, `separate()` and `unite()` are taken from RStudio [cheatsheets](https://www.rstudio.com/resources/cheatsheets/) (CC BY SA RStudio)
