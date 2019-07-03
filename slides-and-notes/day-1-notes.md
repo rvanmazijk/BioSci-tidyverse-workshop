@@ -2,8 +2,6 @@
 
 Ruan van Mazijk
 
-**Note, this notes-page is still being written!**
-
 ## Introducing Ruan
 
 - BSc + Hons here at UCT
