@@ -86,6 +86,7 @@ With the pipe, we feed the result of one line of R-code into the next (i.e. we s
 f(x)
 x %>% f() # same thing
 ```
+
 This allows us to compose functions really easily!
 
 Instead of this mess:
@@ -107,111 +108,49 @@ Much easier to read! Instead of reading from the inside-out, we can read top-to-
 
 ## A motivating example
 
-![An example data-collection scenario in biology]()
+![An example data-collection scenario in biology](images/example-data-collection.png)
 
-![One way to lay out your collected data...]()
+_Collecting_ your data like this is fairly practical!
 
-![Another way...]()
+![One way to lay out your collected data...](images/example-data-layout-1.png)
 
-![The "best" way. (Will make your life easiest in the long-term.)]()
+But computers will struggle to use this, and so will you, to answer questions about pollinator vs flower abundance!
 
-<!--
-TODO: cont.
+![Another way...](images/example-data-layout-2.png)
 
-## Embracing the rectangle
+![The "best" way. (Will make your life easiest in the long-term.)](images/example-data-layout-3.png)
 
-TOC:
+This is **tidy data**. Moreover, tidy data is defined as follows:
 
-- Long vs wide data
-- The advantages of rectangular data
-
-### Long vs wide data
-
-Remember this?
-
-![](images/motivating-example/motivating-example-1.png)
-
-This is _wide-form_ data. Let's move away from that...
-
-Using the `iris` dataset built into R!
-
-### Wide-form data
-
-```r
-iris %>%
-  split(.$Species) %>%
-  map(select, -Species) %>%
-  map(slice, 1:2)
-```
-
-### Classic long-form data
-
-```r
-iris %>%
-  group_by(Species) %>%
-  slice(1:3) %>%
-  select(Species, Sepal.Length:Petal.Width) %>%
-  as.data.frame()
-```
-
-### We can get longer...
-
-```r
-iris %>%
-  group_by(Species) %>%
-  slice(1) %>%
-  gather(trait, trait_value, -Species) %>%
-  ungroup() %>%
-  slice(1:15) %>%
-  as.data.frame()
-```
-
-### The advantages of long data
-
-- Machine-readable
-- The standard for most software/R-functions (e.g. `lm()`, `plot()`, `ggplot()`)
-- How most statistical methods treat data mathematically
-- Easier to subset & wrangle further!
-
-## **Making** your data rectangular
-
-### What are your options?
-
-1. (Easiest to lay it out like that from the start...)
-    - (Many tools (to follow) assume your data is nice & _tidy_)
-2. _Careful_ Excel work
-    - Risky...
-3. Use R!
-    - Many tools _also_ help in _tidying_ data
-    - Namely, the package `tidyr`
-
-### `tidyr::`
-
-An R-package all about getting to _this_^[CC BY-NC-ND 3.0 Grolemund & Wickham 2017. _R for Data Science_]:
-
-![]()
+![CC BY-NC-ND 3.0 Grolemund & Wickham 2017. _R for Data Science_](images/tidy-1.png)
 
 1. Each **variable** must have its own **column**.
 2. Each **observation** must have its own **row**.
 3. Each **value** must have its own **cell**.
 
-#### Verbs to tidy your data
+How do we get our data to look this way?
 
-Untidy observations?
+## `tidyr`
+
+An R-package all about getting to this:
+
+![CC BY-NC-ND 3.0 Grolemund & Wickham 2017. _R for Data Science_](images/tidy-1.png)
+
+`tidyr` provides us with:
+
+## Verbs to tidy your data
 
 ```r
+# Untidy observations?
 gather()    # if > 1 observation per row
 spread()    # if observations live in > 1 row
-```
 
-Untidy variables?
-
-```r
+# Untidy variables?
 separate()  # if > 1 variable per column
 unite()     # if variables live in > 1 column 
 ```
 
-#### Note the following when choosing `tidyr::` verbs
+## Note the following when choosing `tidyr::` verbs
 
 - Be clear on what your **observations** are
     - Like, what **unit** of your study counts as an observation
@@ -219,4 +158,55 @@ unite()     # if variables live in > 1 column
     - E.g. Reproductive success: egg size vs clutch size
     - **This will depend on your study &/or data!**
 - Variables are discrete, seperate ideas
--->
+
+## Untidy observations?
+
+Use `gather()` if > 1 observation per row
+
+```r
+data %>%
+  gather(key, value, ...)
+
+data %>%
+  gather(key = year, value = cases, `1999`, `2000`)
+```
+
+![[CC BY SA RStudio](https://www.rstudio.com/resources/cheatsheets/)](images/gather-example.png)
+
+Use `spread()` if observations live in > 1 row
+
+```r
+data %>%
+  spread(key, value)
+
+data %>%
+  spread(key = type, value = count)
+```
+
+![[CC BY SA RStudio](https://www.rstudio.com/resources/cheatsheets/)](images/spread-example.png)
+
+## Untidy variables?
+
+Use `separate()` if > 1 variable per column
+
+```r
+data %>%
+  separate(col, into, sep)  # sep's default is any non-alphanumeric character
+
+data %>%
+  separate(col = rate, into = c("cases", "pop"))
+```
+
+![[CC BY SA RStudio](https://www.rstudio.com/resources/cheatsheets/)](images/separate-example.png)
+
+Use `unite()` if variables live in > 1 column
+
+```r
+data %>%
+  unite(col, ..., sep)  # again, sep's default is any non-alphanumeric character
+
+data %>%
+  unite(col = year, century, year)
+```
+
+![[CC BY SA RStudio](https://www.rstudio.com/resources/cheatsheets/)](images/unite-example.png)
