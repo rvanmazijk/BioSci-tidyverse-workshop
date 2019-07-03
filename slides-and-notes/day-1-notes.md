@@ -1,4 +1,4 @@
-# Day 1 notes
+# Day 1 notes: Tidy data principles & `tidyr`
 
 Ruan van Mazijk
 
