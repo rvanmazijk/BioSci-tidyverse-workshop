@@ -17,6 +17,8 @@ The material taught in this workshop is based on Ruan's own experience with the 
   <img src="images/logos/hex-dplyr.png"     height="100px" />
 </p>
 
+The materials I have prepared for this workshop are all open source (CC-BY-4.0 Ruan van Mazijk). See the license [here](LICENSE.txt).
+
 ## Workshop outline
 
 - Day 1: Tidy data principles & `tidyr`
