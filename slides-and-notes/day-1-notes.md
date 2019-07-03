@@ -108,21 +108,21 @@ Much easier to read! Instead of reading from the inside-out, we can read top-to-
 
 ## A motivating example
 
-![An example data-collection scenario in biology](images/example-data-collection.png)
+![An example data-collection scenario in biology](../images/example-data-collection.png)
 
 _Collecting_ your data like this is fairly practical!
 
-![One way to lay out your collected data...](images/example-data-layout-1.png)
+![One way to lay out your collected data...](../images/example-data-layout-1.png)
 
 But computers will struggle to use this, and so will you, to answer questions about pollinator vs flower abundance!
 
-![Another way...](images/example-data-layout-2.png)
+![Another way...](../images/example-data-layout-2.png)
 
-![The "best" way. (Will make your life easiest in the long-term.)](images/example-data-layout-3.png)
+![The "best" way. (Will make your life easiest in the long-term.)](../images/example-data-layout-3.png)
 
 This is **tidy data**. Moreover, tidy data is defined as follows:
 
-![CC BY-NC-ND 3.0 Grolemund & Wickham 2017. _R for Data Science_](images/tidy-1.png)
+![CC BY-NC-ND 3.0 Grolemund & Wickham 2017. _R for Data Science_](../images/tidy-1.png)
 
 1. Each **variable** must have its own **column**.
 2. Each **observation** must have its own **row**.
@@ -134,7 +134,7 @@ How do we get our data to look this way?
 
 An R-package all about getting to this:
 
-![CC BY-NC-ND 3.0 Grolemund & Wickham 2017. _R for Data Science_](images/tidy-1.png)
+![CC BY-NC-ND 3.0 Grolemund & Wickham 2017. _R for Data Science_](../images/tidy-1.png)
 
 `tidyr` provides us with:
 
@@ -171,7 +171,7 @@ data %>%
   gather(key = year, value = cases, `1999`, `2000`)
 ```
 
-![[CC BY SA RStudio](https://www.rstudio.com/resources/cheatsheets/)](images/gather-example.png)
+![[CC BY SA RStudio](https://www.rstudio.com/resources/cheatsheets/)](../images/gather-example.png)
 
 Use `spread()` if observations live in > 1 row
 
@@ -183,7 +183,7 @@ data %>%
   spread(key = type, value = count)
 ```
 
-![[CC BY SA RStudio](https://www.rstudio.com/resources/cheatsheets/)](images/spread-example.png)
+![[CC BY SA RStudio](https://www.rstudio.com/resources/cheatsheets/)](../images/spread-example.png)
 
 ## Untidy variables?
 
@@ -197,7 +197,7 @@ data %>%
   separate(col = rate, into = c("cases", "pop"))
 ```
 
-![[CC BY SA RStudio](https://www.rstudio.com/resources/cheatsheets/)](images/separate-example.png)
+![[CC BY SA RStudio](https://www.rstudio.com/resources/cheatsheets/)](../images/separate-example.png)
 
 Use `unite()` if variables live in > 1 column
 
@@ -209,4 +209,4 @@ data %>%
   unite(col = year, century, year)
 ```
 
-![[CC BY SA RStudio](https://www.rstudio.com/resources/cheatsheets/)](images/unite-example.png)
+![[CC BY SA RStudio](https://www.rstudio.com/resources/cheatsheets/)](../images/unite-example.png)
