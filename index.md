@@ -31,6 +31,8 @@ The materials I have prepared for this workshop are all open source (CC-BY-4.0 R
   - [R-script](R/day-2-demo.R)
 - Day 3: Extending your data with `mutate()`, `summarise()` & friends
   - [Slides](slides-and-notes/day-3-slides.pdf)
+  - Notes (**still being neatened up!**)
+  - [R-script](R/day-3-demo.R)
 
 ## Further reading
 
